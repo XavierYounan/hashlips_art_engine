@@ -106,6 +106,10 @@ const layersSetup = (layersOrder) => {
       layerObj.options?.["bypassDNA"] !== undefined
         ? layerObj.options?.["bypassDNA"]
         : false,
+    parent:
+      layerObj.options?.["parent"] != undefined
+        ? layerObj.options?.["parent"]
+        : false,
   }));
   return layers;
 };
@@ -139,7 +143,7 @@ const addMetadata = (_dna, _edition) => {
     date: dateTime,
     ...extraMetadata,
     attributes: attributesList,
-    compiler: "HashLips Art Engine",
+    
   };
   if (network == NETWORK.sol) {
     tempMetadata = {
